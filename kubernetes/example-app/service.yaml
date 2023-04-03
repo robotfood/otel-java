@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-service
+spec:
+  selector:
+    app: example-app
+  type: NodePort
+  ports:
+  - name: http
+    port: 8080     
+    targetPort: 8080
+    nodePort: 30476
+  - name: prometheus
+    port: 9464     
+    targetPort: 9464
+    nodePort: 30478
